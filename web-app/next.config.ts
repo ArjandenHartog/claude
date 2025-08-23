@@ -2,9 +2,6 @@ import type { NextConfig } from "next";
 import path from "path";
 
 const nextConfig: NextConfig = {
-  experimental: {
-    esmExternals: false,
-  },
   webpack: (config, { isServer }) => {
     // Handle xterm.js properly
     if (!isServer) {
