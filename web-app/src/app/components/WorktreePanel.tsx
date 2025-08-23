@@ -35,7 +35,7 @@ export function WorktreePanel({ projectPath, selectedWorktree, onSelectWorktree,
       const trees = await window.electronAPI.git.listWorktrees(projectPath);
       setWorktrees(trees);
       onWorktreesChange?.(trees);
-    } catch (error) {
+    } catch {
       toast({
         title: "Error",
         description: "Failed to load worktrees. Make sure this is a git repository.",

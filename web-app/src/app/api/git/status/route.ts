@@ -3,7 +3,7 @@ import { spawn } from 'child_process';
 
 export async function POST(request: NextRequest) {
   try {
-    const { worktreePath, filePath } = await request.json();
+    const { worktreePath } = await request.json();
     
     if (!worktreePath) {
       return NextResponse.json({ error: 'Worktree path is required' }, { status: 400 });
