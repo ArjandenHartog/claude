@@ -15,7 +15,6 @@ interface ClaudeTerminalProps {
 
 export function ClaudeTerminal({ worktreePath, theme = 'dark' }: ClaudeTerminalProps) {
   const terminalRef = useRef<HTMLDivElement>(null);
-  const [terminal, setTerminal] = useState<Terminal | null>(null);
   const [isConnected, setIsConnected] = useState(false);
   const wsRef = useRef<WebSocket | null>(null);
   const sessionIdRef = useRef<string>('');
@@ -75,7 +74,6 @@ export function ClaudeTerminal({ worktreePath, theme = 'dark' }: ClaudeTerminalP
     term.open(terminalRef.current);
 
     fitAddonRef.current = fitAddon;
-    setTerminal(term);
 
     // Connect to WebSocket server
     const ws = new WebSocket('ws://localhost:3000/api/terminal-ws');
@@ -185,7 +183,7 @@ export function ClaudeTerminal({ worktreePath, theme = 'dark' }: ClaudeTerminalP
       
       term.dispose();
     };
-  }, [worktreePath, theme]);
+  }, [worktreePath, theme, toast]);
 
   return (
     <div className="flex flex-col h-full">

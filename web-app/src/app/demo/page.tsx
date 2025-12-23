@@ -83,7 +83,7 @@ export default function DemoPage() {
             <h2 className="text-xl font-semibold mb-4">🚀 How to Use</h2>
             <ol className="space-y-2 text-muted-foreground">
               <li><strong>1.</strong> Enter the full path to a git repository above</li>
-              <li><strong>2.</strong> Click "Test Project Validation" to verify the API works</li>
+              <li><strong>2.</strong> Click &quot;Test Project Validation&quot; to verify the API works</li>
               <li><strong>3.</strong> In the full app, you can manage worktrees and open terminals</li>
               <li><strong>4.</strong> Terminal sessions run via WebSocket on the server</li>
               <li><strong>5.</strong> All git operations happen server-side with API calls</li>

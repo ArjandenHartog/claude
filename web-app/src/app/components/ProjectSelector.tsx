@@ -33,13 +33,13 @@ export function ProjectSelector({ onSelectProject, onClose }: ProjectSelectorPro
       });
 
       if (response.ok) {
-        const projectInfo = await response.json();
+        await response.json();
         onSelectProject(projectPath.trim());
       } else {
         const errorData = await response.json();
         setError(errorData.error || 'Invalid project path');
       }
-    } catch (error) {
+    } catch {
       setError('Failed to validate project path');
     } finally {
       setIsValidating(false);
